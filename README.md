@@ -1,35 +1,22 @@
-# Jerry's Game Boy portfolio
+# Jerry's portfolio
 
-A personal website built with Astro. The console is the page: use the menu, D-pad, A/B buttons, keyboard, or touch to explore About me, My stats, Projects, and Contact. The shell keeps Claude Code's original Game Boy layout; the content and navigation are deliberately simple.
+Jerry's simple Game Boy-inspired portfolio is live at [tillingcone.github.io](https://tillingcone.github.io/). The page has an introduction, a few personal details, and a place to share projects as they are built.
 
-## Edit your details
+## Edit the content
 
-Update `src/data/profile.ts`. It contains the bio, course, current focus, GitHub username, and projects. The only project listed now is this website. Add other projects only when they exist. Keep links to real pages.
+Update `site/profile.js` to change the bio, details, project list, or links. Keep personal claims and links accurate. The site is plain HTML, CSS, and JavaScript; no build step is needed.
 
-The Stats screen shows details you can verify and links to GitHub. It does not invent skill percentages or personal records.
+## Preview locally
 
-## Run locally
+From the repository root, run a static file server. For example:
 
 ```bash
-npm install
-npm run dev
-npm run build
+python -m http.server 8000 --directory site
 ```
 
-The local preview address appears in the terminal. The build output is in `dist/`.
+Then open `http://localhost:8000`.
 
 ## Publish
 
-The intended public repository is `TillingCone/TillingCone.github.io`. Its main branch runs `.github/workflows/deploy.yml` and publishes the built site with GitHub Pages. Set the repository's Pages source to **GitHub Actions**. The public address is `https://TillingCone.github.io`.
-
-A `j3rry.is-a.dev` address is a possible later addition. It requires a separate registration request and should only be configured after that address is approved. Until then, the site's canonical URL and project demo use GitHub Pages.
-
-## Controls
-
-- Tap a menu choice, or use ↑/↓ and A to select it.
-- Use B or Select to return to the menu.
-- Use Start to return to the menu from anywhere.
-- On a keyboard, Enter or Z selects; Esc or X goes back.
-
-The source is in `src/`; CSS palettes are in `src/styles/theme.css` and the screen layout is in `src/styles/screen.css`.
+Changes to `main` trigger `.github/workflows/deploy.yml`, which uploads `site/` to GitHub Pages. The free public URL is `https://tillingcone.github.io/`. A `j3rry.is-a.dev` domain would require a separate registration and approval before configuring it here.
 
