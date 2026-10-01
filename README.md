@@ -33,4 +33,3 @@ A `j3rry.is-a.dev` address is a possible later addition. It requires a separate 
 
 The source is in `src/`; CSS palettes are in `src/styles/theme.css` and the screen layout is in `src/styles/screen.css`.
 
-

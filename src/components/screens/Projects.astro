@@ -1,0 +1,34 @@
+---
+import { profile } from '../../data/profile';
+const { projects } = profile;
+---
+
+<section class="scr" data-screen="PROJECTS" hidden>
+  <div class="scr__bar"><span>Projects</span><span>{projects.length}</span></div>
+
+  <!-- List view -->
+  <div class="scr__body" data-view="list">
+    <ul class="menu" data-list="projects">
+      {projects.map((project, i) => (
+        <li><button class="menu__item" type="button" data-index={i} aria-current={i === 0 ? 'true' : 'false'}>{project.title}</button></li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Detail view: one card per project, toggled by the console script -->
+  <div class="scr__body" data-view="detail" hidden>
+    {projects.map((project, i) => (
+      <article class="card" data-detail={i} hidden={i !== 0}>
+        <h2 class="card__title">{project.title}</h2>
+        <p class="card__blurb">{project.blurb}</p>
+        <div class="tags">{project.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+        <div class="tags">
+          {project.repo && <a class="tag" href={project.repo} rel="noopener">CODE &gt;</a>}
+          {project.demo && <a class="tag" href={project.demo} rel="noopener">DEMO &gt;</a>}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="scr__hint"><span>Tap a project · B to go back</span></div>
+</section>

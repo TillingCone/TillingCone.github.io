@@ -1,0 +1,20 @@
+---
+const items = [
+  { id: 'ABOUT', label: 'About me' },
+  { id: 'STATS', label: 'My stats' },
+  { id: 'PROJECTS', label: 'Projects' },
+  { id: 'CONTACT', label: 'Contact' },
+];
+---
+
+<section class="scr" data-screen="MENU">
+  <div class="scr__bar"><span>Hi, I'm Jerry</span></div>
+  <div class="scr__body">
+    <ul class="menu" data-list="menu">
+      {items.map((item, i) => (
+        <li><button class="menu__item" type="button" data-goto={item.id} aria-current={i === 0 ? 'true' : 'false'}>{item.label}</button></li>
+      ))}
+    </ul>
+  </div>
+  <div class="scr__hint"><span>Tap a choice or use the buttons</span></div>
+</section>
